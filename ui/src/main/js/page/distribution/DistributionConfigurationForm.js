@@ -22,9 +22,7 @@ import CollapsiblePane from 'common/component/CollapsiblePane';
 import TableSelectInput from 'common/component/input/TableSelectInput';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
 import * as FieldModelUtilities from 'common/util/fieldModelUtilities';
-import {
-    CONTEXT_TYPE, isOneOperationAssigned, isOperationAssigned, OPERATIONS
-} from 'common/util/descriptorUtilities';
+import { CONTEXT_TYPE, isOneOperationAssigned, isOperationAssigned, OPERATIONS } from 'common/util/descriptorUtilities';
 import CommonDistributionConfigurationForm from 'page/distribution/CommonDistributionConfigurationForm';
 import * as DistributionRequestUtility from 'page/distribution/DistributionRequestUtility';
 import * as HttpErrorUtilities from 'common/util/httpErrorUtilities';
@@ -205,12 +203,13 @@ const DistributionConfigurationForm = ({
                     />
                 );
             case JIRA_SERVER_INFO.key: {
-                const commonGlobalConfigId = FieldModelUtilities.getFieldModelSingleValue(channelModel, DISTRIBUTION_COMMON_FIELD_KEYS.channelGlobalConfigId);
-                const jiraSpecificModel = FieldModelUtilities.updateFieldModelSingleValue(specificChannelModel, DISTRIBUTION_COMMON_FIELD_KEYS.channelGlobalConfigId, commonGlobalConfigId);
+                //const commonGlobalConfigId = FieldModelUtilities.getFieldModelSingleValue(channelModel, DISTRIBUTION_COMMON_FIELD_KEYS.channelGlobalConfigId);
+                //const jiraSpecificModel = FieldModelUtilities.updateFieldModelSingleValue(specificChannelModel, DISTRIBUTION_COMMON_FIELD_KEYS.channelGlobalConfigId, commonGlobalConfigId);
                 return (
                     <JiraServerDistributionConfiguration
                         csrfToken={csrfToken}
-                        data={jiraSpecificModel}
+                        //data={jiraSpecificModel}
+                        data={specificChannelModel}
                         setData={setSpecificChannelModel}
                         errors={errors}
                         readonly={readonly}
